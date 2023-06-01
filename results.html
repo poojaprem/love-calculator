@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <!-- <script src="script2.js"></script> -->
+    <link href="love.css" rel="stylesheet">
+    
+</head>
+<body>
+    <h1 >Love calculator results</h1>
+    <h2>These are the results of love calculation by Dr.Love</h2>
+    <div class="results">
+    <h1 id="firstname"></h1>
+
+    <h1>&#x2764;</h1>
+    <H1 id="secondname"></h1>
+    <h1 id="Results"></h1>
+    
+    </div>
+    <p id="outputpara"></p>
+    <script>
+        var result = localStorage.getItem("result");
+        var name1 = localStorage.getItem("name1");
+        var name2 = localStorage.getItem("name2");
+        document.getElementById("Results").textContent = "  " + result;
+        document.getElementById("firstname").textContent = " " + name1;
+        document.getElementById("secondname").textContent = " " + name2;
+        localStorage.removeItem("result");
+        localStorage.removeItem("name1");
+        localStorage.removeItem("name2");
+
+        var outputParagraph = document.getElementById("outputpara");
+
+        // Generate different paragraphs based on the result
+        if (result<=20 ) {
+        outputParagraph.textContent = "With a love calculator result ranging from 1% to 20%, it seems that there might not be much romantic potential between you and your partner. This low percentage suggests that the compatibility and chemistry between you two are quite limited. However, remember that love calculators are just fun and playful tools, and they don't define the true depth of your relationship. Keep exploring, communicate openly, and who knows, your love story might evolve beyond these initial numbers.";
+        } else if (result > 20 && result <=40) {
+        outputParagraph.textContent = "If your love calculator result falls between 20% and 40%, it indicates that there is some potential for a connection, but it might require further exploration and effort from both partners. This range suggests that there might be a few areas where your interests and values align, but there are also noticeable differences. Don't be disheartened; this can be an opportunity to learn more about each other and discover common ground, as relationships often grow through understanding and compromise.";
+        } else if (result > 40 && result <=60){
+        outputParagraph.textContent = "With a love calculator result ranging from 40% to 60%, there is a fair chance of compatibility and attraction between you and your partner. This percentage suggests that you share a moderate level of common interests, values, and perspectives. While there may be areas of both agreement and disagreement, this range often signifies a good starting point for building a strong foundation. Embrace the opportunity to deepen your connection through open communication, shared experiences, and a willingness to grow together.";
+        }
+        else if (result > 60 && result <=80){
+        outputParagraph.textContent = "If your love calculator result falls between 60% and 80%, congratulations! This percentage range indicates a high level of compatibility and potential for a strong and enduring relationship. Your interests, values, and outlook on life likely align in many significant ways. It's important to nurture and cherish this connection, as you have the potential to build a deep and meaningful partnership. Remember, though, that relationships require continuous effort and commitment to thrive.";
+        }
+        else if (result > 80 && result <=100){
+        outputParagraph.textContent = "With a love calculator result of 80% to 100%, you have hit the jackpot in terms of compatibility! This range suggests an exceptional level of harmony and understanding between you and your partner. Your shared interests, values, and aspirations likely form a solid foundation for a long-lasting and fulfilling relationship. While no relationship is perfect, this high percentage indicates that you have a great chance of building a deeply loving and supportive bond. Cherish this special connection and continue nurturing it with love, respect, and open communication";
+        }
+    </script>
+
+       <p>Remember, love calculators are just for entertainment purposes and should not be taken too seriously. Real relationships are complex and require much more than a simple percentage to determine their strength and potential.</p>
+
+</body>
+</html>
